@@ -1,0 +1,35 @@
+header{
+  background-color: var(--mainColor)!important;
+  color:var(--textColor) !important;
+  box-shadow: 1px 5px 10px 2px gray;
+}
+header a{
+  color: #fff !important;
+
+  border-top: var(--mainColor) 2px solid;
+  border-bottom: var(--mainColor) 2px solid ;
+ margin-left: 5px;
+  transition: .2s ease-in-out;
+}
+
+
+.logoformat svg{
+  width: 50px;
+  height: 50px;
+}
+.btnDesgin button{
+  all: unset;
+  margin: 10px;
+  border: 3px solid #64beeb;
+  padding: 5px 10px;
+  color:#b2d1e0;
+  transition: .2s ease-in-out;
+  
+}
+.btnDesgin button:hover{
+  cursor: pointer;
+  transform: translateY(-10%);
+  box-shadow: 0 0.5em 0.5em -0.4em #83d6ff;
+  color:#83d6ff;
+
+}

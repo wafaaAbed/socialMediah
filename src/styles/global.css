@@ -1,0 +1,49 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  /* background-color: rgb(237, 237, 237); */
+}
+:root{
+  --mainColor:  rgb(16, 16, 120 );
+  --textColor:#fff;
+}
+.mainColoring{
+  --mainColor:  rgb(16, 16, 120 ) !important;
+  --textColor:#fff !important;
+}
+.btnDesgin button{
+  all: unset;
+  margin: 10px;
+  border: 3px solid #64beeb;
+  padding: 5px 10px;
+  color:#b2d1e0;
+  transition: .2s ease-in-out;
+  
+}
+.btnDesgin button:hover{
+  cursor: pointer;
+  transform: translateY(-10%);
+  box-shadow: 0 0.5em 0.5em -0.4em #83d6ff;
+  color:#83d6ff;
+}
+.addPost{
+position: absolute;
+color: black;
+font-size: 30px;
+bottom: 10px;;
+right:20px;
+width: 50px;
+height: 50px;
+}
+.infinite-scroll-component__outerdiv{
+  width: 100% !important;
+}
+
+header a:hover,.navbar-nav .nav-link.active{
+  text-shadow: 0 0.5em 0.5em -0.4em #83d6ff !important;
+  color:#83d6ff !important;
+  border-top: #83d6ff 2px solid;
+  border-bottom:#83d6ff 2px solid ;
+}

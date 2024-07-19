@@ -1,0 +1,13 @@
+.formContainer input[type="text"]{
+  font-size: 14px;
+
+}
+.btnSubmit{
+
+  background-color: var(--mainColor) !important;
+  color: var(--textColor) !important;
+opacity: .7;
+}
+.btnSubmit:hover{
+opacity: 1;
+}

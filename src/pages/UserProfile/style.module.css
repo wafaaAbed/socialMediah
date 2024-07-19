@@ -1,0 +1,81 @@
+.profileContainer{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  
+}
+.profileContainer .shape{
+  width: 70%;
+  background-color: rgba(137, 196, 233, 0.671);
+  clip-path: polygon(0 0, 100% 0, 60% 100%, 0% 100%);
+z-index: 50;
+   position: relative;
+
+}
+.profileContainer .shape img{
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  margin: 50px ;
+  border: 1px solid rgb(192, 192, 192);
+  padding: 2px;
+}
+.shape span{
+  position: absolute;
+  bottom: 10px;
+  left: 25%;
+  color:rgb(126, 31, 31);
+}
+.userInfo{
+  list-style-type: none;
+}.userInfo li{
+  margin: 10px 0;
+  padding: 7px 15px;
+  background-color: rgba(249, 194, 111, 0.729);
+  position: relative;
+  border-bottom-right-radius:200px ;
+  width: 100%;
+}
+.userInfo li::before{
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 100%;
+  background-color: brown;
+  top:0;
+  left: 0;
+}
+.userInfo li span{
+  font-weight: bold;
+  color:rgb(126, 31, 31);
+}
+.profileContainer .content{
+  width: 50%;
+}
+
+
+.userNumber{
+display: flex;
+justify-content: center;
+}
+.userNumber span{
+  color:brown !important;
+  font-weight: bold;
+  font-size: 20px;
+  margin: auto;
+}
+.userNumber div{
+  display: flex;
+justify-content: top !important;
+align-items: center;
+background-color: rgba(137, 196, 233, 0.485);
+color:rgb(146, 36, 36);
+border-radius: 50%;
+padding: 20px;
+width: 150px;
+height:150px;
+align-items: center;
+margin:  20px 10px;
+
+}

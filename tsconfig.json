@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "types":["vite-plugin-svgr/client"],
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    "baseUrl": ".",
+    "paths": {
+        "@assets/*": ["src/assets/*"],
+          "@Components/*": ["src/Components/*"],
+          "@hooks/*": ["src/hooks/*"],
+          "@pages/*": ["src/pages/*"],
+          "@routes/*": ["src/routes/*"],
+          "@store/*": ["src/store/*"],
+          "@store": ["src/store/index"],
+          "@types": ["src/types/index"],
+          "@types/*": ["src/types/*"],
+          "@styles/*": ["src/styles/*"],
+          "@layout/*": ["src/layout/*"],
+          "@util/*": ["src/util/*"],
+          "@util": ["src/util/index"],
+          "@services/*": ["src/services/*"],
+          "@validation/*": ["src/validation/*"],
+    },
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
