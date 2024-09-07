@@ -18,12 +18,14 @@ function UserProfile() {
     const userPosts = [...userPost].reverse();
     const zz = userPosts.map((el)=>el.author)
     const userInformation = zz[0];
+    
   useEffect(() => {
-    const promies=  dispatch(actGetAllOneUserPosts(params.id))
-        return () => {
+    const promies=  dispatch(actGetAllOneUserPosts(params.id as unknown as number))
+    return () => {
       promies.abort()
       dispatch(cleanOneUserPost());
-    };
+          
+    }
   }, [dispatch])
 
 

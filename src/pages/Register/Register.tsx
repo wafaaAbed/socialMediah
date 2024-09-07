@@ -22,14 +22,11 @@ const navigate = useNavigate();
   });
 
   const submitForm: SubmitHandler<signUpType> = async (data) => {
-    // type TFormData={
-    //   image:File,
-    //   userName:string,
-    //   password:string,
-    //   email:string,
-    //   }
+  
     const {image,userName,password,email,name} = data; 
-  const userImage= image[0];
+     
+       const userImageFile =image as unknown as FileList;
+       const userImage = userImageFile?.[0]
     dispatch(actRegister({ userImage, userName,password,email,name})).unwrap()
     .then(()=>{
       navigate("/");

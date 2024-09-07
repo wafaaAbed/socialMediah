@@ -9,14 +9,14 @@ interface IAuthState{
   accessToken: null | string,
   error: null | string,
   loading:TLoading,
-  user:TUser[],
+  user:TUser | null,
 }
 
 const initialState : IAuthState ={
 accessToken: null,
 error: null,
 loading:"idle",
-user:[],
+user:null,
 }
 
 const authSlice = createSlice({
@@ -30,7 +30,7 @@ const authSlice = createSlice({
     
     authLogout:(state)=>{
       state.accessToken=null;
-      state.user=[];
+      state.user=null;
       
     }
   },
@@ -44,8 +44,7 @@ const authSlice = createSlice({
     bulider.addCase(actRegister.fulfilled, (state, action) => {
       state.loading = "succeeded";
       state.accessToken = action.payload.token;
-      state.user = action.payload.user;
-
+      state.user =action.payload.user  ;
     })
     bulider.addCase(actRegister.rejected, (state, action) => {
       state.loading = "failed";

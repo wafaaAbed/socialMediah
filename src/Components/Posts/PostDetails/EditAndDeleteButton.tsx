@@ -8,7 +8,7 @@ type TEditAndDeleteButtonprops={
   postId:number,
   titlePost?:string | undefined,
   messagePost?:string | undefined,
-  id?:number | null
+  id?:number | undefined
 
 }
 
@@ -21,7 +21,7 @@ const EditAndDeleteButton= memo(({ postId,titlePost,messagePost ,id}: TEditAndDe
   const DeleteHandler = async () => {
     await dispatch(DeletePost(postId)).unwrap().then(() => {
       setShow(!show)
-      dispatch(actGetAllOneUserPosts())
+      dispatch(actGetAllOneUserPosts(id as number))
     })
   }
 

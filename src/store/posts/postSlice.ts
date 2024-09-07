@@ -11,7 +11,7 @@ interface IPostsState{
   error:null | string,
   loading:TLoading,
   posts:TPost[],
-  onePostById:TPost[];
+  onePostById:TPost | null;
   userPost:TPost[],
 }
 
@@ -19,7 +19,7 @@ const initialState:IPostsState={
   error:null,
   loading:"idle",
   posts:[],
-  onePostById:[],
+  onePostById:null,
   userPost:[]
 
 }
@@ -35,7 +35,7 @@ const postSlice = createSlice({
     cleanOnePostById:(state)=>{
       state.error=null,
       state.loading="idle" 
-      state.onePostById=[]
+      state.onePostById=null
     },
     cleanOneUserPost:(state)=>{
       state.error=null,

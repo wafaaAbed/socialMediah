@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { RootState } from "@store/index";
+import axiosErrorHandler from "@util/axiosErrorHandler";
 
 
 import axios from "axios";
@@ -22,9 +23,7 @@ export const DeletePost = createAsyncThunk(
     
     return response.data;
     } catch (error) {
-      console.log(error.response.data.message)
-      return rejectWithValue(error.response.data.message);
-    }
+      return rejectWithValue(axiosErrorHandler(error))    }
   }
 );
 export default DeletePost;

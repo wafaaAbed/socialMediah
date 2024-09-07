@@ -1,6 +1,6 @@
 
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { TUser } from "@types";
+import axiosErrorHandler from "@util/axiosErrorHandler";
 import axios from "axios";
 
 type TFormData={
@@ -8,10 +8,7 @@ type TFormData={
   password:string,
   }
 
-  type TResponse = {
-    user: TUser[],
-    accessToken: string;
-  };
+
 
 export const actLogin = createAsyncThunk(
   "login/actLogin",
@@ -20,7 +17,7 @@ export const actLogin = createAsyncThunk(
     const { userName, password } = userInfo;
 
     try {
-      const response = await axios.post<TResponse>(
+      const response = await axios.post(
         "https://tarmeezacademy.com/api/v1/login",
         {
           username: userName,
@@ -30,9 +27,10 @@ export const actLogin = createAsyncThunk(
     console.log(response.data)
 
       return response.data;
-    } catch (error ) {
-      return rejectWithValue(error.response.data.message );
+    } catch (error) {
+      return rejectWithValue(axiosErrorHandler(error))
     }
+  
   }
 );
 export default actLogin;

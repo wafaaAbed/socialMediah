@@ -13,9 +13,9 @@ import { useNavigate } from "react-router-dom";
 
 type TAddOREditPostButtonProps={
   titleBtn:string,
-  titlePost?:string | null,
+  titlePost?: string | null  ,
   messagePost?:string | null,
-  id?:number | null,
+  id?:number  | undefined ,
 }
 
 
@@ -41,8 +41,9 @@ const AddOREditPostButton = memo(({titleBtn,titlePost,messagePost,id}:TAddOREdit
     })
   }
 useEffect(()=>{
-  setValue('title',titlePost)
-  setValue('message',messagePost)
+
+  setValue('title',titlePost ? titlePost : " ")
+  setValue('message',messagePost ? messagePost : "" )
 },[])
 
   return (

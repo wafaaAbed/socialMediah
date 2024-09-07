@@ -1,5 +1,5 @@
 
-import { Header, Footer } from '@Components/common'
+import { Header } from '@Components/common'
 import { Outlet } from 'react-router-dom'
 import { Container } from "react-bootstrap";
 import styles from "./style.module.css"

@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { RootState } from "@store/index";
+import axiosErrorHandler from "@util/axiosErrorHandler";
 
 import axios from "axios";
 
@@ -35,8 +36,7 @@ export const actCreateComment = createAsyncThunk(
           return response.data;
           
         } catch (error) {
-          console.log("no send response")
-          return rejectWithValue(error);
+          return rejectWithValue(axiosErrorHandler(error))
         }
     }
 );

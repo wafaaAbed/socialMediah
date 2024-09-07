@@ -1,6 +1,5 @@
 import { useAppDispatch, useAppSelector } from '@store/hooks';
 import { actGetOnePostById, cleanOnePostById } from '@store/posts/postSlice';
-import { TPost } from '@types'
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom'
 import { unknown } from 'zod';
@@ -25,9 +24,9 @@ return () => {
 
   return (
     <section className='my-2 border p-3'>
-      <h1>Post By: {onePostById.author?.name}</h1>
+      <h1>Post By: {onePostById?.author?.name}</h1>
      {onePostById && 
-    <PostDetails id={0} title={''} body={''} image={''} comments_count={0} comments={[]} {...onePostById} />
+    <PostDetails   isConmment={true} {...onePostById} />
       
      }
     

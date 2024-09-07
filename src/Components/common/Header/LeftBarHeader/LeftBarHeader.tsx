@@ -4,23 +4,26 @@ import Register from "@pages/Register/Register"
 import UserInfo from "../userInfo/UserInfo"
 import { TUser } from "@types"
 
-type TLeftBarHeaderprops={
-  accessToken :string | null,
-  user:TUser[],
+type TLeftBarHeaderprops = {
+  accessToken: string | null,
+  user: TUser | null,
 }
 
 
-function LeftBarHeader({ accessToken,user}:TLeftBarHeaderprops) {
-
+function LeftBarHeader({ accessToken, user }: TLeftBarHeaderprops) {
   return (
     <>
-      {!accessToken ? <><Login /><Register /></> :
-       <>
-       <UserInfo user={user}/>
-       <Logout />
-       </>
-       
-       }
+      {accessToken && user ?
+        <>
+          <UserInfo  {...user} />
+          <Logout /></>
+        :
+
+
+        <><Login /><Register /></>
+
+
+      }
 
 
     </>

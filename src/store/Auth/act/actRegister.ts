@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { TUser } from "@types";
+import axiosErrorHandler from "@util/axiosErrorHandler";
 import axios from "axios";
 
 
@@ -11,11 +11,7 @@ import axios from "axios";
       name:string,
       }
 
-      type TResponse = {
-        user: TUser[],
-        accessToken: string;
-      };
-
+    
 
 export const actRegister = createAsyncThunk(
   "registe/registerNewUser",
@@ -34,14 +30,13 @@ export const actRegister = createAsyncThunk(
       "Content-Type":"multipart/form-data",
   }
     try {
-      const response = await axios.post<TResponse>(
+      const response = await axios.post(
         "https://tarmeezacademy.com/api/v1/register",formData,{headers:headers}
               );
       console.log(response.data)
-      return response.data;
+      return(response.data)
     }catch (error) {
-  
-      return rejectWithValue(error.response.data.message )
+      return rejectWithValue(axiosErrorHandler(error))
     }
   }
 );

@@ -6,7 +6,9 @@ import LeftBarHeader from "./LeftBarHeader/LeftBarHeader";
 
 import { useAppSelector } from "@store/hooks";
 
+
 const { logoformat, btnDesgin } = style;
+
 function Header() {
   
   const { accessToken, user } = useAppSelector((state) => state.auth)
@@ -24,12 +26,12 @@ function Header() {
               navbarScroll
             >
               <Nav.Link as={NavLink} to={"/"}> 🏠 Home</Nav.Link>
-              {accessToken &&
-                <Nav.Link as={NavLink} to={`profile/${user.name}/${user.id}`}> 💁 Profile</Nav.Link>
+              {accessToken && user &&
+                <Nav.Link as={NavLink} to={`profile/${user?.username}/${user?.id}`}> 💁 Profile</Nav.Link>
               }
             </Nav>
             <Nav className={btnDesgin}>
-              <LeftBarHeader accessToken={accessToken} user={user} />
+            <LeftBarHeader accessToken={accessToken} user={user} />
             </Nav>
           </Navbar.Collapse>
         </Container>
